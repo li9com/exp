@@ -1,0 +1,20 @@
+- name: "Get playbook variables"
+  include_vars:
+    dir: 'vars'
+    extensions: ['yml']
+
+- name: "Creating instance in Azure: Provisioning {{ instance_name }}"
+  azure_rm_virtualmachine:
+    resource_group: "{{ poc_rg }}"
+    location: "{{ poc_location }}"
+    name: "{{ instance_name }}"
+    admin_username: "{{ my_admin_user }}"
+    admin_password: "{{ my_admin_pass }}"
+    subnet_name: "{{poc_subnet}}"
+    os_type: "{{ oses[my_os].type }}"
+    vm_size: "{{ my_vm_size  | default('Basic_A0') }}"
+    image:
+      offer: "{{ oses[my_os].offer }}"
+      publisher: "{{ oses[my_os].publisher }}"
+      sku: "{{ oses[my_os].sku }}"
+      version: latest

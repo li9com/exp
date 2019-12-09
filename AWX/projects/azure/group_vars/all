@@ -1,0 +1,13 @@
+AZURE_CLIENT_ID : "f12c8475-663f-4844-a45a-b4c4157475d8"
+AZURE_SECRET : "Muln/O=hhK]l-ZoPCY3jOe7RnHsKiC65"
+AZURE_SUBSCRIPTION_ID : "60451954-5351-44c4-ab78-3af5cb89c859"
+AZURE_TENANT : "05737656-b8b1-428c-b9f4-1049b4e016d5"
+poc_rg: "preprod"
+my_os: "{{ my_os1 | default('CentOS 7.3') }}"
+#    my_vm_size: "Basic_A0"
+instance_name: "{{ my_vm_name | default('poc-vm-centos2') }}"
+my_admin_user: "alex"
+my_admin_pass: "Compaq123!!"
+poc_location: "centralus"
+poc_subnet: "public"
+

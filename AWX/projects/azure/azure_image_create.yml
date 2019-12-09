@@ -1,0 +1,7 @@
+- name: Launching image build
+  hosts: localhost
+  gather_facts: False
+  connection: local
+
+  roles:
+   - azure_image_create

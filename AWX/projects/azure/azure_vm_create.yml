@@ -1,0 +1,8 @@
+- name: Launching azure_vm_build
+  hosts: localhost
+  gather_facts: False
+  connection: local
+
+  roles:
+  - azure_rg_create
+  - azure_vm_create

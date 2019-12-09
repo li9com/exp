@@ -1,0 +1,8 @@
+- name: List available publishers
+  azure_rm_virtualmachineimage_facts:
+    location: centralus
+    publisher: "MicrosoftWindowsServer"
+#    offer: "Windows Server 2012 Datacenter"
+  register: out1
+
+- debug: msg="{{out1}}"

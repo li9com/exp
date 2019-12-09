@@ -1,0 +1,7 @@
+- name: Create a resource group
+  azure_rm_resourcegroup:
+    name: poc-rg
+    location: centralus
+    tags:
+        testing: poc
+        delete: never

@@ -1,0 +1,9 @@
+- name: POC Ansible playbook for install some packages
+  hosts: all
+  tasks:
+    - name: Install packages
+      become: true
+      yum:
+        name: "{{packages}}"
+        state: latest
+

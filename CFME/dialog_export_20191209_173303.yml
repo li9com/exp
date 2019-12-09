@@ -1,0 +1,1810 @@
+---
+- description: 
+  buttons: submit,cancel
+  label: Install IIS
+  dialog_tabs:
+  - description: 
+    display: edit
+    label: Basic Information
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: edit
+      label: 'Informations :'
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: param_ansible_winrm_server_cert_validation
+        description: ansible_winrm_server_cert_validation
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ignore
+        values: 
+        values_method: 
+        values_method_options: {}
+        options: {}
+        label: ansible_winrm_server_cert_validation
+        position: 0
+        validator_type: f
+        validator_rule: 
+        reconfigurable: true
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: true
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: textarea_box_1
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: Internet Information Services (IIS) is a flexible, general-purpose
+          web server from Microsoft that runs on Windows systems to serve requested
+          HTML pages or files. An IIS web server accepts requests from remote client
+          computers and returns the appropriate response.
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Description
+        position: 1
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldTextAreaBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+- description: 
+  buttons: submit,cancel
+  label: Install linux packages
+  dialog_tabs:
+  - description: 
+    display: edit
+    label: Basic Information
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: edit
+      label: Extra Packages
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: param_packages
+        description: packages
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: "['telnet', 'strace']"
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: 'List of packages:'
+        position: 0
+        validator_type: regex
+        validator_rule: "^\\[((('[a-z|A-Z|0-9|-]*'(, ?)))*('[a-z|A-Z|0-9|-]*'))?\\]$"
+        reconfigurable: true
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+- description: 
+  buttons: submit,cancel
+  label: Order VM in Azure
+  dialog_tabs:
+  - description: 
+    display: 
+    label: Virtual machine
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: 
+      label: Custom Parameters
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: vm_name
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: VM Name
+        position: 0
+        validator_type: f
+        validator_rule: 
+        reconfigurable: true
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: src_vm_id
+        description: Operation System of a new VM
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Image
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: src_vm_id
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders:
+        - param_ansible_connection
+        - param_ansible_port
+        - param_ansible_become
+        - param_packages
+        values: 
+      - name: instance_type
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: VM Size
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: instance_type
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders:
+        - cpu
+        - memory
+        - month-cost
+        values: 
+      - name: cpu
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: CPU cores
+        position: 3
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: instance_cpu
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: memory
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: RAM (GiB)
+        position: 4
+        validator_type: f
+        validator_rule: 
+        reconfigurable: true
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: instance_memory
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: applevel
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: '1'
+        values:
+        - - 
+          - "<None>"
+        - - '2'
+          - auto
+        - - '1'
+          - multi
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Approval Level
+        position: 5
+        validator_type: 
+        validator_rule: 
+        reconfigurable: true
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+    - description: TCO per month,year,3 years
+      display: edit
+      label: Pricing
+      display_method: 
+      display_method_options: 
+      position: 1
+      dialog_fields:
+      - name: month-cost
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Month Cost $
+        position: 0
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: monthcost
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders:
+        - oneyear-cost
+        - threeyear-cost
+      - name: oneyear-cost
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: One Year Cost $
+        position: 1
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: oneyearcost
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: threeyear-cost
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Three Year Cost $
+        position: 2
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: threeyearcost
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders:
+        - ownerapproval
+        - directorapproval
+        - vpapproval
+        - cioapproval
+  - description: New tab 1
+    display: edit
+    label: Network Settings
+    display_method: 
+    display_method_options: 
+    position: 1
+    dialog_groups:
+    - description: Description
+      display: edit
+      label: New Section
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: cloud_network
+        description: Cloud network in Azure cloud
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Virtual Private Cloud
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: cloud_network
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders:
+        - cloud_subnet
+        values: 
+      - name: cloud_subnet
+        description: Cloud network subnet in VPC
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Network
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: cloud_subnet
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+        values: 
+      - name: resource_group
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Resource Group
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: true
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: cloud_rg
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+        values: 
+  - description: New tab 2
+    display: edit
+    label: Additional Software
+    display_method: 
+    display_method_options: 
+    position: 2
+    dialog_groups:
+    - description: Description
+      display: edit
+      label: Order
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: param_ansible_connection
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Ansible Connection
+        position: 0
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: contype_azure
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_ansible_port
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Ansible port
+        position: 1
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: conport_azure
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_ansible_become
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Ansible become
+        position: 2
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: conbecome_azure
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_packages
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: true
+        label: Software
+        position: 3
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: Azure
+          ae_instance: multidrop_azure
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+        values: 
+  - description: Approving level depends on VM's price
+    display: edit
+    label: Approvals
+    display_method: 
+    display_method_options: 
+    position: 3
+    dialog_groups:
+    - description: Description
+      display: edit
+      label: New Section
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: ownerapproval
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Owner Approval
+        position: 0
+        validator_type: f
+        validator_rule: 
+        reconfigurable: true
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog/approvals
+          ae_class: multiapproval
+          ae_instance: ownerapproval
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: directorapproval
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Director Approval
+        position: 1
+        validator_type: f
+        validator_rule: 
+        reconfigurable: true
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog/approvals
+          ae_class: multiapproval
+          ae_instance: directorapproval
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: vpapproval
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: VP Approval
+        position: 2
+        validator_type: f
+        validator_rule: 
+        reconfigurable: true
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog/approvals
+          ae_class: multiapproval
+          ae_instance: vpapproval
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: cioapproval
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: CIO Approval
+        position: 3
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: true
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog/approvals
+          ae_class: multiapproval
+          ae_instance: cioapproval
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+  - description: Add to active directory ability
+    display: edit
+    label: Active Directory
+    display_method: 
+    display_method_options: 
+    position: 4
+    dialog_groups:
+    - description: Description
+      display: edit
+      label: New Section
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: param_ad_enable
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: f
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Join to Active Directory
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: true
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldCheckBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+- description: 
+  buttons: submit,cancel
+  label: Install Rabbitmq
+  dialog_tabs:
+  - description: 
+    display: edit
+    label: Rabbitmq Installation
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: edit
+      label: Extra Variables
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: param_rabbitmq_username
+        description: User Admin for new installation of rabbitmq
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: admin
+        values: 
+        values_method: 
+        values_method_options: {}
+        options: {}
+        label: Admin username
+        position: 0
+        validator_type: f
+        validator_rule: 
+        reconfigurable: true
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_rabbitmq_password
+        description: Password for admin user to access for rabbitmq service
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: compaq
+        values: 
+        values_method: 
+        values_method_options: {}
+        options: {}
+        label: Admin  password
+        position: 1
+        validator_type: f
+        validator_rule: 
+        reconfigurable: true
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_rabbitmq_webenable
+        description: Enable Web Access
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: t
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Enable Web Access
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldCheckBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+- description: 
+  buttons: submit,cancel
+  label: Order VM in VMWare
+  dialog_tabs:
+  - description: 
+    display: 
+    label: Virtual Machine
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: 
+      label: Basic Parameters
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: vm_name
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: VM Name
+        position: 0
+        validator_type: f
+        validator_rule: 
+        reconfigurable: true
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: option_0_cores_per_socket
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: '1'
+        values:
+        - - 
+          - "<None>"
+        - - '1'
+          - '1'
+        - - '2'
+          - '2'
+        - - '4'
+          - '4'
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Number of CPUs
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: option_0_vm_memory
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: '2048'
+        values:
+        - - 
+          - "<None>"
+        - - '1024'
+          - '1024'
+        - - '2048'
+          - '2048'
+        - - '4096'
+          - '4096'
+        - - '8192'
+          - '8192'
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: VM Memory
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: src_vm_id
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Operation System
+        position: 3
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: VMWare
+          ae_instance: src_vm_id
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders:
+        - param_ansible_connection
+        - param_ansible_port
+        - param_ansible_become
+        - param_packages
+        values: 
+  - description: ''
+    display: edit
+    label: Storage
+    display_method: 
+    display_method_options: 
+    position: 1
+    dialog_groups:
+    - description: Description
+      display: edit
+      label: New Section
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: option_0_placement_ds_name
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Storage Pool
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: VMWare
+          ae_instance: placement_ds_name
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+        values: 
+  - description: Install additional software
+    display: edit
+    label: Additional Software
+    display_method: 
+    display_method_options: 
+    position: 2
+    dialog_groups:
+    - description: Description
+      display: edit
+      label: New Section
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: param_ansible_connection
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Ansible Connection
+        position: 0
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: VMWare
+          ae_instance: contype_vmware
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_ansible_port
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Ansible Port
+        position: 1
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: VMWare
+          ae_instance: conport_vmware
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_ansible_become
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Ansible Become
+        position: 2
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: VMWare
+          ae_instance: conbecome_vmware
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_packages
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: true
+        label: Software
+        position: 3
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: VMWare
+          ae_instance: multidrop_vmware
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+        values: 
+- description: 
+  buttons: submit,cancel
+  label: Install Additional Software
+  dialog_tabs:
+  - description: 
+    display: edit
+    label: Basic Information
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: edit
+      label: Extra Packages
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: param_ansible_connection
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: ansible connection
+        position: 0
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: anypackages
+          ae_instance: contype
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_ansible_port
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: ansible port
+        position: 1
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: anypackages
+          ae_instance: conport
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_ansible_become
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: ansible become
+        position: 2
+        validator_type: f
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: anypackages
+          ae_instance: conbecome
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: param_packages
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: true
+        label: Software
+        position: 3
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Dialog
+          ae_class: anypackages
+          ae_instance: multidrop
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+        values: 

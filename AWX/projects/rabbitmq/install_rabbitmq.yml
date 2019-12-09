@@ -1,0 +1,5 @@
+- name: Install rabbitmq
+  hosts: all
+  become: true
+  roles:
+   - rabbitmq

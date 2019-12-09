@@ -1,0 +1,67 @@
+- name: POC Ansible playbook for install some packages
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Install Linux packages
+      become: true
+      yum:
+        name: "{{item}}"
+        state: latest
+      with_items: "{{packages}}"
+      when: ansible_connection == 'ssh' and packages is defined
+    - name: Install Windows packages
+      win_chocolatey:
+        name: '{{ item }}'
+        state: present
+      with_items: "{{packages}}"
+      when: ansible_connection == 'winrm' and packages is defined
+#    - name: Install Windows roles
+#      win_feature:
+#        name: "{{item}}"
+#        state: absent
+#        restart: yes
+#        include_sub_features: yes
+#        include_management_tools: yes
+#      with_items: "{{packages}}"
+#      when: ansible_connection == 'winrm' and packages is defined
+        
+    - block:
+      - name: Install AD packages
+        become: true
+        yum:
+          name: "{{item}}"
+          state: latest
+        with_items:
+          - "realmd"
+          - "sssd"
+          - "krb5-workstation"
+          - "krb5-libs"
+          - "oddjob"
+          - "oddjob-mkhomedir"
+          - "samba-common-tools"
+        register: task_result
+
+      - name: Reboot immediately if there was a change.
+        shell: "sleep 5 && reboot"
+        async: 1
+        poll: 0
+        when: task_result is changed
+
+      - name: Wait for the reboot to complete if there was a change.
+        wait_for_connection:
+          connect_timeout: 20
+          sleep: 5
+          delay: 5
+          timeout: 300
+        when: task_result is changed
+
+      - name: tmp fix resolve.conf
+        copy: src=resolv.conf dest=/etc/resolv.conf
+
+      - name: Add to AD
+        shell: "{{item}}"
+        with_items:
+          - "echo 'MmAcaDe4t4X4XJ6SbZQ1' | kinit testadjoin@ERICCONVXIO.ONMICROSOFT.COM"
+          - "echo 'MmAcaDe4t4X4XJ6SbZQ1' | realm join -v -U testadjoin ERICCONVXIO.ONMICROSOFT.COM"
+#        ignore_errors: true
+      when: ansible_connection == 'ssh' and ad_enable == 't' 

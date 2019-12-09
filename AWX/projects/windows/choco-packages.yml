@@ -1,0 +1,10 @@
+- name: Install multiple packages
+  hosts: all
+  gather_facts: False
+  connection: winrm
+  win_chocolatey:
+    name: '{{ item }}'
+    state: present
+  with_items:
+  - pscx
+  - windirstat

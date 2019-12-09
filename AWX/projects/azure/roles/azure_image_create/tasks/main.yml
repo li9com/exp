@@ -1,0 +1,11 @@
+- name: "Stop and generalize VMs"
+  azure_rm_virtualmachine:
+    resource_group: "{{ poc_rg }}"
+    name: "poc-vm-centos"
+    generalized: yes
+
+- name: "Create an image from a virtual machine"
+  azure_rm_image:
+    resource_group: "{{ poc_rg }}"
+    name: "centos7.3"
+    source: "poc-vm-centos"

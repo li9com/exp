@@ -1,0 +1,7 @@
+- name: Fetching all images from azure
+  hosts: localhost
+  gather_facts: False
+  connection: local
+
+  roles:
+   - azure_list_images

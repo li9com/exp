@@ -1,0 +1,12 @@
+---
+- name: Install epel
+  yum: name=epel-release state=present disable_gpg_check=yes
+
+- name: Install RabbitMQ .
+  yum:
+    name: "{{item}}"
+    state: "present"
+    disable_gpg_check: yes
+  with_items:
+    - "erlang"
+    - "rabbitmq-server"

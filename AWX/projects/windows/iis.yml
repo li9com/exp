@@ -1,0 +1,7 @@
+- name: Install 7zip on Windows VM's
+  hosts: all
+  gather_facts: False
+  connection: winrm
+  roles:
+#   - install7zip
+    - iis

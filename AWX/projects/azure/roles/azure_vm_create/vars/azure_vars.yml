@@ -1,0 +1,26 @@
+oses:
+  CentOS 7.3:
+    sku: 7.3
+    publisher: OpenLogic
+    offer: CentOS
+    type: Linux
+  RHEL 7.3:
+    sku: 7.3
+    publisher: Redhat
+    offer: RHEL
+    type: Linux
+  Windows Datacenter 2016:
+    sku: 2016-Datacenter
+    publisher: MicrosoftWindowsServer
+    offer: WindowsServer
+    type: Windows
+  Windows Datacenter 2012 R2:
+    sku: 2012-R2-Datacenter
+    publisher: MicrosoftWindowsServer
+    offer: WindowsServer
+    type: Windows
+
+AZURE_CLIENT_ID : "f12c8475-663f-4844-a45a-b4c4157475d8"
+AZURE_SECRET : "Muln/O=hhK]l-ZoPCY3jOe7RnHsKiC65"
+AZURE_SUBSCRIPTION_ID : "60451954-5351-44c4-ab78-3af5cb89c859" 
+AZURE_TENANT : "05737656-b8b1-428c-b9f4-1049b4e016d5"
